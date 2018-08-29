@@ -41,7 +41,7 @@ public class OAuthApi {
 
     public static String userAccessToken(String clientId,String clientSecret,String accessTokenUri,String code,String redirect_uri){
         HashMap<String, Object> paramMap = new HashMap<>();
-        paramMap.put("grant_type", "authorization_code");
+        paramMap.put("grant_type", "authorizatio n_code");
         paramMap.put("code", code);
         paramMap.put("redirect_uri", redirect_uri);
         return HttpRequest.post(accessTokenUri).addHeaders(getAuthorization(clientId,clientSecret)).form(paramMap).execute().body();
